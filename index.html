@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Qué es la PC y Evaluación de Problemas | PC++</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #083553;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --white: #fff;
+            --black: #000;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto;
+        }
+
+        .bg-light {
+            background-color: var(--light-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .img-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .img-caption {
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        .cta-button, .course-button, .submit-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover, .course-button:hover, .submit-button:hover {
+            background-color: #083553;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            color: white;
+        }
+
+        /* Navegación mejorada */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        #navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 10px 0;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .logo span {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo span span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-left: auto;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .hamburger.active {
+            transform: rotate(90deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: var(--primary-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 5px solid white;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tabs de contenido mejorados */
+        .content-tabs {
+            margin: 40px 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light-color);
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: var(--transition);
+            position: relative;
+            margin: 0 5px 10px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab-button:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .tab-button.active {
+            color: var(--secondary-color);
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 25px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Estilos para contenido */
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+        }
+
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .copy-btn.copied {
+            background-color: #27ae60;
+        }
+
+        .info-box {
+            background-color: #e8f4fc;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background-color: #fef9e7;
+            border-left: 4px solid #f1c40f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .tip-box {
+            background-color: #e8f6ef;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .problem-list {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .problem-item {
+            background-color: var(--light-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .problem-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .problem-info {
+            flex-grow: 1;
+        }
+
+        .problem-links a {
+            margin-left: 10px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+
+        .video-thumbnail i {
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .video-item:hover .video-thumbnail i {
+            transform: scale(1.2);
+            color: var(--secondary-color);
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-info h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .difficulty-easy {
+            background-color: #e8f6ef;
+            color: #27ae60;
+        }
+
+        .difficulty-medium {
+            background-color: #fef9e7;
+            color: #f39c12;
+        }
+
+        .difficulty-hard {
+            background-color: #fdecea;
+            color: #e74c3c;
+        }
+
+        /* Footer mejorado */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        .footer-logo span span {
+            color: var(--secondary-color);
+        }
+
+        .footer-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-info li {
+           margin-bottom: 12px;
+            color: var(--light-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .footer-info i {
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-links ul,
+        .footer-courses ul {
+            list-style: none;
+        }
+
+        .footer-links li,
+        .footer-courses li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a,
+        .footer-courses a {
+            color: var(--light-color);
+        }
+
+        .footer-links a:hover,
+        .footer-courses a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--light-color);
+            font-size: 0.9rem;
+        }
+
+        .legal-links {
+            margin-top: 10px;
+        }
+
+        .legal-links a {
+            color: var(--light-color);
+            margin: 0 10px;
+        }
+
+        .legal-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design mejorado */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: rgba(44, 62, 80, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+                padding: 80px 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .nav-links a {
+                color: var(--white);
+                font-size: 1.2rem;
+            }
+            
+            .hamburger {
+                display: block;
+                margin-right: 20px;
+                position: relative;
+                z-index: 1001;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .tab-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-button {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 5px;
+                border-radius: 5px;
+            }
+            
+            .tab-button.active::after {
+                display: none;
+            }
+
+            .problem-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .problem-links {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .problem-links a {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-info li {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                font-weight: 500; 
+                color: white;
+                padding: 10px 15px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .code-block {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+            
+            .tab-content {
+                padding: 15px;
+            }
+            
+            .content-section ul, .content-section ol {
+                margin-left: 20px;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .img-container {
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <span>PC<span>++</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#content">Contenido</a></li>
+                <li><a href="index.html#info">Problemas</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Programación Competitiva</h1>
+            <p class="subtitle">Aprende qué es la PC y cómo se evalúan los problemas</p>
+        </div>
+    </section>
+
+    <!-- Sección de Contenido -->
+    <section class="section">
+        <div class="container">
+            <div class="content-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="introduccion">Introducción</button>
+                    <button class="tab-button" data-tab="evaluacion">Evaluación</button>
+                    <button class="tab-button" data-tab="ejemplos">Videos</button>
+                </div>
+
+                <!-- Pestaña de Introducción -->
+                <div id="introduccion" class="tab-content active">
+                    <div class="content-section">
+                        <h3>¿Qué es la Programación Competitiva?</h3>
+                        <p>La Programación Competitiva (PC) es un deporte mental que consiste en resolver problemas de programación bajo restricciones de tiempo. Los participantes compiten individualmente o en equipos para resolver la mayor cantidad de problemas en el menor tiempo posible.</p>
+                        
+                        <div class="img-container">
+                            <img src="./Images/1712764744219.png">
+                        </div>
+                        
+                        <p>La PC se caracteriza por:</p>
+                        <ul>
+                            <li>Resolver problemas algorítmicos complejos</li>
+                            <li>Trabajar bajo presión de tiempo</li>
+                            <li>Escribir código eficiente y correcto</li>
+                            <li>Aprender a pensar de forma lógica y creativa</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <p><strong>Dato importante:</strong> Las competencias de programación son organizadas por universidades, empresas tecnológicas y plataformas en línea. Algunas de las más famosas son ICPC, Google Code Jam, Facebook Hacker Cup y Codeforces.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>Beneficios de la Programación Competitiva</h3>
+                        <p>Participar en programación competitiva ofrece numerosos beneficios:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Beneficio</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mejora habilidades de resolución de problemas</td>
+                                        <td>Aprendes a descomponer problemas complejos en partes más manejables</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desarrolla pensamiento algorítmico</td>
+                                        <td>Te familiarizas con estructuras de datos y algoritmos esenciales</td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td>Fomenta el trabajo bajo presión</td>
+                                        <td>Aprendes a manejar el estrés y tomar decisiones rápidas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amplía tu red de contactos</td>
+                                        <td>Conoces a otros apasionados por la programación y algoritmos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <p><strong>Consejo:</strong> Comienza con problemas sencillos y gradualmente aumenta la dificultad. La consistencia es más importante que la intensidad cuando se está comenzando.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>Plataformas de Programación Competitiva</h3>
+                        <p>Existen diversas plataformas donde puedes practicar y competir:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Plataforma</th>
+                                        <th>Enfoque</th>
+                                        <th>Nivel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Codeforces</td>
+                                        <td>Competencias regulares y rating system</td>
+                                        <td>Intermedio-Avanzado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LeetCode</td>
+                                        <td>Preparación para entrevistas técnicas</td>
+                                        <td>Todos los niveles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HackerRank</td>
+                                        <td>Retos por categorías y competencias</td>
+                                        <td>Principiante-Intermedio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AtCoder</td>
+                                        <td>Competencias con problemas de alta calidad</td>
+                                        <td>Todos los niveles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CSES</td>
+                                        <td>Conjunto de problemas educativos</td>
+                                        <td>Principiante-Intermedio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DMOJ</td>
+                                        <td>Plataforma con problemas variados</td>
+                                        <td>Todos los niveles</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="img-container">
+                            <img src="./Images/Capture.PNG">
+                            <div class="img-caption">Interfaz típica de una plataforma de programación competitiva</div>
+                        </div>
+
+                        <div class="img-container">
+                            <img src="./Images/Capture2.PNG">
+                            <div class="img-caption">Interfaz típica de una plataforma de programación competitiva</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pestaña de Evaluación -->
+                <div id="evaluacion" class="tab-content">
+                    <div class="content-section">
+                        <h3>¿Cómo se Evalúan los Problemas?</h3>
+                        <p>En programación competitiva, los problemas se evalúan mediante pruebas automatizadas. Tu solución se ejecuta contra un conjunto de casos de prueba predefinidos y debe producir la salida correcta para todos ellos.</p>
+                        
+                        <div class="img-container">
+                            <img src="./Images/Capture3.PNG">
+                            <div class="img-caption">Proceso de evaluación de soluciones</div>
+                        </div>
+                        
+                        <div class="img-container">
+                            <img src="./Images/Capture4.PNG">
+                            <div class="img-caption">Proceso de evaluación de soluciones</div>
+                        </div>
+                        
+                        <div class="img-container">
+                            <img src="./Images/Capture5.PNG">
+                            <div class="img-caption">Proceso de evaluación de soluciones</div>
+                        </div>
+                        
+                        <h4>Sistema de verificación</h4>
+                        <p>El proceso típico de evaluación sigue estos pasos:</p>
+                        <ol>
+                            <li>Compilación de tu código</li>
+                            <li>Ejecución con casos de prueba ocultos</li>
+                            <li>Comparación de tu salida con la salida esperada</li>
+                            <li>Asignación de veredicto</li>
+                        </ol>
+                        
+                        <div class="warning-box">
+                            <p><strong>Importante:</strong> Los casos de prueba suelen estar ocultos y son diseñados para probar diferentes aspectos de tu solución, incluidos casos extremos y esquina.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>Veredictos Comunes</h3>
+                        <p>Al enviar una solución, puedes recibir uno de los siguientes veredictos:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Veredicto</th>
+                                        <th>Significado</th>
+                                        <th>Causas comunes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Accepted (AC)</td>
+                                        <td>Tu solución es correcta</td>
+                                        <td>¡Felicidades!</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wrong Answer (WA)</td>
+                                        <td>Tu solución produce salida incorrecta</td>
+                                        <td>Error lógico, casos extremos no considerados</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time Limit Exceeded (TLE)</td>
+                                        <td>Tu solución es demasiado lenta</td>
+                                        <td>Algoritmo ineficiente, complejidad incorrecta</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Runtime Error (RE)</td>
+                                        <td>Tu solución provoca un error durante la ejecución</td>
+                                        <td>Acceso a memoria inválida, división por cero</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Compilation Error (CE)</td>
+                                        <td>Tu código no compila</td>
+                                        <td>Errores de sintaxis, includes faltantes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Memory Limit Exceeded (MLE)</td>
+                                        <td>Tu solución usa demasiada memoria</td>
+                                        <td>Estructuras de datos muy grandes, recursión profunda</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <p><strong>Consejo:</strong> Cuando recibes un veredicto incorrecto, no te desanimes. Analiza tu código, busca casos extremos y considera enfoques alternativos. La depuración es una habilidad esencial en PC.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>Tipos de Problemas</h3>
+                        <p>Los problemas en programación competitiva pueden clasificarse en varias categorías:</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Descripción</th>
+                                        <th>Ejemplos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Problemas de implementación</td>
+                                        <td>Requieren codificar cuidadosamente una solución directa</td>
+                                        <td>Simulaciones, procesamiento de cadenas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Problemas matemáticos</td>
+                                        <td>Involucran conceptos y fórmulas matemáticas</td>
+                                        <td>Teoría de números, combinatoria, probabilidad</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Problemas de grafos</td>
+                                        <td>Se modelan como grafos y requieren algoritmos específicos</td>
+                                        <td>BFS, DFS, Dijkstra, árboles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Problemas de programación dinámica</td>
+                                        <td>Requieren dividir el problema en subproblemas más pequeños</td>
+                                        <td>Knapsack, LCS, problemas de optimización</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Problemas de geometría</td>
+                                        <td>Involucran cálculos y propiedades geométricas</td>
+                                        <td>Puntos, líneas, polígonos, intersecciones</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Problemas voraces (Greedy)</td>
+                                        <td>Requieren tomar decisiones localmente óptimas</td>
+                                        <td>Problemas de scheduling, algoritmos voraces</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pestaña de Ejemplos -->
+                <div id="ejemplos" class="tab-content">
+                    
+
+                    <div class="content-section">
+                        <h3>Recursos de Aprendizaje</h3>
+                        <p>Para mejorar en programación competitiva, te recomendamos los siguientes recursos:</p>
+                        
+                        <div class="video-grid">
+                            <div class="video-item">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h4>Introducción a la Programación Competitiva</h4>
+                                    <p>Video introductorio que explica los conceptos básicos de PC.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="video-item">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h4>Estructuras de Datos Esenciales</h4>
+                                    <p>Tutorial sobre las estructuras de datos más utilizadas en PC.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="video-item">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h4>Algoritmos de Grafos</h4>
+                                    <p>Explicación de BFS, DFS y otros algoritmos fundamentales.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="video-item">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h4>Técnicas de Optimización</h4>
+                                    <p>Cómo mejorar el rendimiento de tus soluciones.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span>PC<span>++</span></span>
+                    </div>
+                    <p>Plataforma educativa dedicada a la enseñanza de programación competitiva y algoritmos.</p>
+                </div>
+                
+                <div class="footer-info">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@pcplusplus.com</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ciudad Universitaria, 12345</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#content">Contenido</a></li>
+                        <li><a href="index.html#info">Problemas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-courses">
+                    <h4>Cursos Populares</h4>
+                    <ul>
+                        <li><a href="#">Introducción a la PC</a></li>
+                        <li><a href="#">Algoritmos Básicos</a></li>
+                        <li><a href="#">Estructuras de Datos</a></li>
+                        <li><a href="#">Programación Dinámica</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 PC++. Todos los derechos reservados.</p>
+                <div class="legal-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                    <a href="#">Mapa del Sitio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad para las pestañas
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    // Desactivar todas las pestañas
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Activar la pestaña seleccionada
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Menú hamburguesa para móviles
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Cambiar estilo del navbar al hacer scroll
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+        
+        // Función para copiar código
+        function copyCode(button) {
+            const codeBlock = button.parentElement.nextElementSibling;
+            const textToCopy = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                button.classList.add('copied');
+                button.innerHTML = '<i class="fas fa-check"></i> Copiado';
+                
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.innerHTML = '<i class="fas fa-copy"></i> Copiar';
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
