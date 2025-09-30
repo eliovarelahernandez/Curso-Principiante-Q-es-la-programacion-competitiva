@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Qué es la PC y Evaluación de Problemas | PC++</title>
+    <title> Qué es la PC y Evaluación de Problemas | PC++</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -122,6 +122,11 @@
             transition: var(--transition);
             border: none;
             cursor: pointer;
+        }
+
+        .course-button { 
+            max-width: 130px;
+            
         }
 
         .cta-button:hover, .course-button:hover, .submit-button:hover {
@@ -473,6 +478,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         .video-item:hover {
@@ -813,6 +819,502 @@
                 margin: 20px 0;
             }
         }
+
+        /** Visual Scheme Caracterisiticas de la programacion competitiva **/
+        .visual-scheme {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scheme-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .scheme-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .scheme-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .scheme-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .scheme-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .scheme-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+
+
+        /**  Style de imagenes de plataformas , grid 2x2 **/
+        .image-grid-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .image-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 300px; /* Altura fija */
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .image-card:hover .image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .image-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-overlay i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .image-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .image-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        
+
+         /* Media queries para responsividad */
+        @media (max-width: 768px) {
+            .image-grid-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .image-wrapper {
+                height: 250px; /* Reducir altura en móviles */
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid-section {
+                padding: 20px 15px;
+            }
+            
+            .image-wrapper {
+                height: 200px; /* Altura aún menor en móviles pequeños */
+            }
+            
+            .image-content {
+                padding: 20px;
+            }
+        }
+
+        /** Diagrama de flechas pasos para resolucion de ejercicios  **/
+        .flow-diagram {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--light-color);
+        }
+
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .flow-step {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .flow-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .flow-step h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .flow-arrow {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .flow-container {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .flow-step {
+                flex: 1;
+                min-width: 200px;
+                max-width: 220px;
+            }
+            
+            .flow-arrow {
+                transform: rotate(0deg);
+            }
+            
+            .flow-arrow:nth-child(even) {
+                transform: rotate(90deg);
+            }
+        }
+        
+        /** Infografia **/
+        .infographic {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .infographic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(50px, -50px);
+        }
+
+        .infographic-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .infographic-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .infographic-step {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--secondary-color);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /**  Comparacion Visual **/
+
+        .comparison-section {
+            padding: 60px 0;
+        }
+
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .approach-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid var(--light-color);
+        }
+
+        .approach-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .approach-card.optimized {
+            border-color: var(--secondary-color);
+            position: relative;
+        }
+
+        .approach-card.optimized::before {
+            content: 'RECOMENDADO';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .approach-header {
+            background: linear-gradient(135deg, var(--light-color), #dde4e6);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .approach-card.optimized .approach-header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+        }
+
+        .approach-header i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .approach-header h4 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .approach-content {
+            padding: 30px;
+        }
+
+        .approach-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .approach-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .approach-features i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .approach-features .fa-check {
+            color: #27ae60;
+        }
+
+        .approach-features .fa-times {
+            color: #e74c3c;
+        }
+
+        .approach-use-case {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .approach-use-case h5 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .vs-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .vs-separator span {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .vs-separator{ 
+                display: none;
+            }
+
+            .comparison-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .approach-card {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .vs-separator {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -847,139 +1349,128 @@
             <div class="content-tabs">
                 <div class="tab-buttons">
                     <button class="tab-button active" data-tab="introduccion">Introducción</button>
-                    <button class="tab-button" data-tab="evaluacion">Evaluación</button>
+                    <button class="tab-button" data-tab="evaluacion">Problemas y Soluciones</button>
                     <button class="tab-button" data-tab="ejemplos">Videos</button>
                 </div>
 
                 <!-- Pestaña de Introducción -->
                 <div id="introduccion" class="tab-content active">
                     <div class="content-section">
-                        <h3>¿Qué es la Programación Competitiva?</h3>
+                        <h1>¿Qué es la Programación Competitiva?</h1>
                         <p>La Programación Competitiva (PC) es un deporte mental que consiste en resolver problemas de programación bajo restricciones de tiempo. Los participantes compiten individualmente o en equipos para resolver la mayor cantidad de problemas en el menor tiempo posible.</p>
                         
                         <div class="img-container">
                             <img src="./Images/1712764744219.png">
                         </div>
-                        
-                        <p>La Programacion Competitiva se caracteriza por:</p>
-                        <ul>
-                            <li>Resolver problemas algorítmicos complejos</li>
-                            <li>Trabajar bajo presión de tiempo</li>
-                            <li>Escribir código eficiente y correcto</li>
-                            <li>Aprender a pensar de forma lógica y creativa</li>
-                        </ul>
-                        
-                        <div class="info-box">
-                            <p><strong>Dato importante:</strong> Las competencias de programación son organizadas por universidades, empresas tecnológicas y plataformas en línea. Algunas de las más famosas dentro de Cuba son las copas regionales, la copa UCLV , los concursos a niveles
-                            provinciales , concusos nacionales ( OCI ) , la ICPC ( por equipos de 3 ) , la IOI y la CIIC.</p>
+
+                        <div class="visual-scheme">
+                            <h3 class="scheme-title">Características de la Programación Competitiva</h3>
+                            <div class="scheme-container">
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <h4>Pensamiento Algorítmico</h4>
+                                    <p>Desarrolla habilidades para diseñar soluciones eficientes a problemas complejos</p>
+                                </div>
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <h4>Trabajo Bajo Presión</h4>
+                                    <p>Aprende a resolver problemas en tiempo limitado, simulando entornos reales</p>
+                                </div>
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h4>Código Eficiente</h4>
+                                    <p>Escribe soluciones optimizadas que funcionen incluso con grandes volúmenes de datos</p>
+                                </div>
+                            </div>
                         </div>
+
+
+                        
                     </div>
 
                     <div class="content-section">
-                        <h3>Beneficios de la Programación Competitiva</h3>
-                        <p>Participar en programación competitiva ofrece numerosos beneficios:</p>
-                        
-                        <div class="comparison-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Beneficio</th>
-                                        <th>Descripción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Mejora habilidades de resolución de problemas</td>
-                                        <td>Aprendes a descomponer problemas complejos en partes más manejables</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Desarrolla pensamiento algorítmico</td>
-                                        <td>Te familiarizas con estructuras de datos y algoritmos esenciales</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                        <td>Fomenta el trabajo bajo presión</td>
-                                        <td>Aprendes a manejar el estrés y tomar decisiones rápidas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Amplía tu red de contactos</td>
-                                        <td>Conoces a otros apasionados por la programación y algoritmos</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                         
                         <div class="tip-box">
                             <p><strong>Consejo:</strong> Comienza con problemas sencillos y gradualmente aumenta la dificultad. La consistencia es más importante que la intensidad cuando se está comenzando.</p>
                         </div>
                     </div>
 
+
+                    
+
                     <div class="content-section">
-                        <h3>Plataformas de Programación Competitiva</h3>
-                        <p>Existen diversas plataformas donde puedes practicar y competir:</p>
-                        
-                        <div class="comparison-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Plataforma</th>
-                                        <th>Enfoque</th>
-                                        <th>Nivel</th>
-                                        <th>Enlaces</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Codeforces</td>
-                                        <td>Competencias regulares y rating system</td>
-                                        <td>Intermedio-Avanzado</td>
-                                        <td> <a href="https://codeforces.com/">codeforces</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>DMOJ</td>
-                                        <td>Plataforma con problemas variados</td>
-                                        <td>Todos los niveles</td>
-                                        <td> <a href="https://dmoj.uclv.edu.cu/">DMOJ</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>USACO</td>
-                                        <td>Pagina con problemas de todo tipo descritos con ganado</td>
-                                        <td>Todos los niveles</td>
-                                        <td><a href="https://usaco.org/">USACO</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>LeetCode</td>
-                                        <td>Sitio Web con problemas de alta cal dad</td>
-                                        <td>Todos los niveles</td>
-                                        <td> <a href="https://leetcode.com/">LeetCode</a></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>CSES</td>
-                                        <td>Conjunto de problemas educativos</td>
-                                        <td>Principiante-Intermedio</td>
-                                        <td><a href="https://cses.fi/problemset/">CSES</a></td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
+                        <div class="image-grid-section">
+                            <h3 class="section-title">Plataformas de Práctica</h3>
+                            <div class="image-grid-container">
+                                <div class="image-card">
+                                    <div class="image-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?auto=format&fit=crop&w=500&q=80" alt="Codeforces">
+                                        <div class="image-overlay">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="image-content">
+                                        <h4>Codeforces</h4>
+                                        <p>Plataforma rusa con competencias regulares y sistema de rating muy popular.</p>
+                                        <a href="https://codeforces.com/" class="course-button">Visitar</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="image-card">
+                                    <div class="image-wrapper">
+                                        <img src="./Images/leetcode.PNG" alt="LeetCode">
+                                        <div class="image-overlay">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="image-content">
+                                        <h4>LeetCode</h4>
+                                        <p>Ideal para preparación de entrevistas técnicas en empresas tecnológicas.</p>
+                                        <a href="https://leetcode.com/" class="course-button">Visitar</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="image-card">
+                                    <div class="image-wrapper">
+                                        <img src="./Images/DMOJ.PNG" alt="AtCoder">
+                                        <div class="image-overlay">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="image-content">
+                                        <h4>DMOJ</h4>
+                                        <p>Plataforma cubana donde se realizan concursos provinciales y nacionales.</p>
+                                        <a href="https://dmoj.uclv.edu.cu/" class="course-button">Visitar</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="image-card">
+                                    <div class="image-wrapper">
+                                        <img src="./Images/USACO.PNG" alt="CSES">
+                                        <div class="image-overlay">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="image-content">
+                                        <h4>USACO</h4>
+                                        <p>Colección de problemas educativos organizados por temas y dificultad.</p>
+                                        <a href="https://usaco.org/" class="course-button">Visitar</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <h3>Imagenes de plataformas online</h3>
-
-                        <div class="img-container">
-                            <img src="./Images/Capture.PNG">
-                            <div class="img-caption">Interfaz típica de la plataforma (Codeforces)</div>
-                        </div>
-
-                        <div class="img-container">
-                            <img src="./Images/Capture2.PNG">
-                            <div class="img-caption">Interfaz típica de la plataforma (dmoj)</div>
-                        </div>
+                        
                     </div>
 
                     <div class="content-section">
-                        <h3>IDEs y Editores de Texto para Programación Competitiva</h3>
+                        <h1>IDEs y Editores de Texto para Programación Competitiva</h1>
                         <p>La elección del entorno de desarrollo es crucial en programación competitiva. Los participantes suelen utilizar editores de texto ligeros o IDEs completos según sus preferencias personales. Aquí te presentamos algunas de las opciones más populares:</p>
                         
                         <div class="comparison-table">
@@ -990,6 +1481,7 @@
                                         <th>Tipo</th>
                                         <th>Ventajas</th>
                                         <th>Desventajas</th>
+                                        <th>Enlaces de Descarga</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -998,25 +1490,23 @@
                                         <td>Editor de texto</td>
                                         <td>Liviano, extensible, multiplataforma</td>
                                         <td>Requiere configuración para debugging</td>
+                                        <td><a href="https://code.visualstudio.com/download">Descargar vscode</a></td>
                                     </tr>
                                     <tr>
                                         <td>Code::Blocks</td>
                                         <td>IDE completo</td>
                                         <td>Especializado para C/C++, fácil de usar</td>
                                         <td>Interfaz menos moderna</td>
+                                        <td><a href="https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows">descargar codeblocks</a> </td>
                                     </tr>
                                     <tr>
                                         <td>Dev-C++</td>
                                         <td>IDE completo</td>
                                         <td>Liviano, portable, buen para principiantes</td>
                                         <td>Poco mantenimiento, solo Windows</td>
+                                        <td><a href="https://www-bloodshed-net.translate.goog/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc">Descargar DevC++</a> </td>
                                     </tr>
-                                    <tr>
-                                        <td>Sublime Text</td>
-                                        <td>Editor de texto</td>
-                                        <td>Extremadamente rápido, múltiples cursores</td>
-                                        <td>Licencia paga después de evaluación</td>
-                                    </tr>
+                                    
                                     
                                 </tbody>
                             </table>
@@ -1086,93 +1576,7 @@
                 <!-- Pestaña de Evaluación -->
                 <div id="evaluacion" class="tab-content">
                     <div class="content-section">
-                        <h3>¿Cómo se Evalúan los Problemas?</h3>
-                        <p>En programación competitiva, los problemas se evalúan mediante pruebas automatizadas. Tu solución se ejecuta contra un conjunto de casos de prueba predefinidos y debe producir la salida correcta para todos ellos.</p>
-                        
-                        <div class="img-container">
-                            <img src="./Images/Capture3.PNG">
-                            <div class="img-caption">Proceso de evaluación de soluciones en dmoj</div>
-                        </div>
-                        
-                        <div class="img-container">
-                            <img src="./Images/Capture4.PNG">
-                            <div class="img-caption">Proceso de evaluación de soluciones en Codeforces</div>
-                        </div>
-                        
-                        <div class="img-container">
-                            <img src="./Images/Capture5.PNG">
-                            <div class="img-caption">Proceso de evaluación de soluciones en dmoj</div>
-                        </div>
-                        
-                        <h4>Sistema de verificación</h4>
-                        <p>El proceso típico de evaluación sigue estos pasos:</p>
-                        <ol>
-                            <li>Compilación de tu código</li>
-                            <li>Ejecución con casos de prueba ocultos</li>
-                            <li>Comparación de tu salida con la salida esperada</li>
-                            <li>Asignación de veredicto</li>
-                        </ol>
-                        
-                        <div class="warning-box">
-                            <p><strong>Importante:</strong> Los casos de prueba suelen estar ocultos y son diseñados para probar diferentes aspectos de tu solución, incluidos casos extremos y esquina.</p>
-                        </div>
-                    </div>
-
-                    <div class="content-section">
-                        <h3>Veredictos Comunes</h3>
-                        <p>Al enviar una solución, puedes recibir uno de los siguientes veredictos:</p>
-                        
-                        <div class="comparison-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Veredicto</th>
-                                        <th>Significado</th>
-                                        <th>Causas comunes</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Accepted (AC)</td>
-                                        <td>Tu solución es correcta</td>
-                                        <td>¡Felicidades!</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wrong Answer (WA)</td>
-                                        <td>Tu solución produce salida incorrecta</td>
-                                        <td>Error lógico, casos extremos no considerados</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Time Limit Exceeded (TLE)</td>
-                                        <td>Tu solución es demasiado lenta</td>
-                                        <td>Algoritmo ineficiente, complejidad incorrecta</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Runtime Error (RE)</td>
-                                        <td>Tu solución provoca un error durante la ejecución</td>
-                                        <td>Acceso a memoria inválida, división por cero</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Compilation Error (CE)</td>
-                                        <td>Tu código no compila</td>
-                                        <td>Errores de sintaxis, includes faltantes</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Memory Limit Exceeded (MLE)</td>
-                                        <td>Tu solución usa demasiada memoria</td>
-                                        <td>Estructuras de datos muy grandes, recursión profunda</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <div class="tip-box">
-                            <p><strong>Consejo:</strong> Cuando recibes un veredicto incorrecto, no te desanimes. Analiza tu código, busca casos extremos y considera enfoques alternativos. La depuración es una habilidad esencial en PC.</p>
-                        </div>
-                    </div>
-
-                    <div class="content-section">
-                        <h3>Tipos de Problemas</h3>
+                        <h1>Tipos de Problemas</h1>
                         <p>Los problemas en programación competitiva pueden clasificarse en varias categorías:</p>
                         
                         <div class="comparison-table">
@@ -1250,13 +1654,220 @@
                                 </tbody>
                             </table>
                         </div>
+
+
+                        <div class="comparison-section">
+                            <h3 class="section-title">Enfoques de Solución</h3>
+                            <div class="comparison-container">
+                                <div class="approach-card">
+                                    <div class="approach-header">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <h4>Fuerza Bruta</h4>
+                                    </div>
+                                    <div class="approach-content">
+                                        <ul class="approach-features">
+                                            <li><i class="fas fa-check"></i> Fácil de implementar</li>
+                                            <li><i class="fas fa-check"></i> No requiere análisis complejo</li>
+                                            <li><i class="fas fa-times"></i> Ineficiente para entradas grandes</li>
+                                            <li><i class="fas fa-times"></i> Puede exceder tiempo límite</li>
+                                        </ul>
+                                        <div class="approach-use-case">
+                                            <h5>Cuándo usar:</h5>
+                                            <p>Problemas pequeños con n ≤ 20</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="vs-separator">
+                                    <span>VS</span>
+                                </div>
+                                
+                                <div class="approach-card optimized">
+                                    <div class="approach-header">
+                                        <i class="fas fa-rocket"></i>
+                                        <h4>Algoritmo Optimizado</h4>
+                                    </div>
+                                    <div class="approach-content">
+                                        <ul class="approach-features">
+                                            <li><i class="fas fa-check"></i> Eficiente y escalable</li>
+                                            <li><i class="fas fa-check"></i> Maneja entradas grandes</li>
+                                            <li><i class="fas fa-times"></i> Requiere análisis profundo</li>
+                                            <li><i class="fas fa-times"></i> Más difícil de implementar</li>
+                                        </ul>
+                                        <div class="approach-use-case">
+                                            <h5>Cuándo usar:</h5>
+                                            <p>Problemas con n ≥ 10^5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flow-diagram">
+                            <h2 class="diagram-title">Proceso de Resolución de Problemas</h2>
+                            <div class="flow-container">
+                                <div class="flow-step">
+                                    <div class="flow-icon">
+                                        <i class="fas fa-book-open"></i>
+                                    </div>
+                                    <h4>Leer Problema</h4>
+                                    <p>Comprender el enunciado y restricciones</p>
+                                </div>
+                                <div class="flow-arrow">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="flow-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h4>Diseñar Solución</h4>
+                                    <p>Planear el algoritmo y estructuras de datos</p>
+                                </div>
+                                <div class="flow-arrow">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="flow-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h4>Implementar</h4>
+                                    <p>Escribir el código de la solución</p>
+                                </div>
+                                <div class="flow-arrow">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="flow-icon">
+                                        <i class="fas fa-vial"></i>
+                                    </div>
+                                    <h4>Probar</h4>
+                                    <p>Verificar con casos de prueba</p>
+                                </div>
+                                <div class="flow-arrow">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="flow-icon">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </div>
+                                    <h4>Enviar</h4>
+                                    <p>Subir solución a la plataforma</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+
+                    <div class="content-section">
+                        <h1>¿Cómo se Evalúan los Problemas?</h1>
+                        <p>En programación competitiva, los problemas se evalúan mediante pruebas automatizadas. Tu solución se ejecuta contra un conjunto de casos de prueba predefinidos y debe producir la salida correcta para todos ellos.</p>
+
+
+                        <div class="infographic">
+                            <h3 class="infographic-title">Proceso de Evaluación</h3>
+                            <div class="infographic-steps">
+                                <div class="infographic-step">
+                                    <div class="step-number">1</div>
+                                    <h4>Envío de Solución</h4>
+                                    <p>Envías tu código a la plataforma para ser evaluado</p>
+                                </div>
+                                <div class="infographic-step">
+                                    <div class="step-number">2</div>
+                                    <h4>Compilación</h4>
+                                    <p>El sistema compila tu código para verificar errores de sintaxis</p>
+                                </div>
+                                <div class="infographic-step">
+                                    <div class="step-number">3</div>
+                                    <h4>Ejecución de Pruebas</h4>
+                                    <p>Tu programa se ejecuta con casos de prueba ocultos</p>
+                                </div>
+                                <div class="infographic-step">
+                                    <div class="step-number">4</div>
+                                    <h4>Verificación de Resultados</h4>
+                                    <p>Se comparan tus resultados con las respuestas esperadas</p>
+                                </div>
+                                <div class="infographic-step">
+                                    <div class="step-number">5</div>
+                                    <h4>Veredicto Final</h4>
+                                    <p>Recibes el resultado: Aceptado, Error, Tiempo Límite, etc.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <p><strong>Importante:</strong> Los casos de prueba suelen estar ocultos y son diseñados para probar diferentes aspectos de tu solución, incluidos casos extremos y esquina.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h1>Veredictos Comunes</h1>
+                        <p>Al enviar una solución, puedes recibir uno de los siguientes veredictos:</p>
+                        
+                         <div class="visual-scheme">
+                            <h3 class="scheme-title">Veredictos Comunes</h3>
+                            <div class="scheme-container">
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-check-circle" style="color: #27ae60;"></i>
+                                    </div>
+                                    <h4>Aceptado (AC)</h4>
+                                    <p>Tu solución pasó todas las pruebas. ¡Felicidades!</p>
+                                </div>
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-times-circle" style="color: #e74c3c;"></i>
+                                    </div>
+                                    <h4>Respuesta Incorrecta (WA)</h4>
+                                    <p>Tu solución produce salidas incorrectas en algunas pruebas</p>
+                                </div>
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-clock" style="color: #f39c12;"></i>
+                                    </div>
+                                    <h4>Tiempo Límite Excedido (TLE)</h4>
+                                    <p>Tu solución es demasiado lenta para algunos casos de prueba</p>
+                                </div>
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-exclamation-triangle" style="color: #f1c40f;"></i>
+                                    </div>
+                                    <h4>Error en Tiempo de Ejecución (RTE)</h4>
+                                    <p>Tu programa se bloquea o genera errores durante la ejecución</p>
+                                </div>
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-exclamation-circle" style="color: #e67e22;"></i>
+                                    </div>
+                                    <h4>Error de Compilacion (CE)</h4>
+                                    <p>Tu código no compila</p>
+                                </div>
+                                <div class="scheme-item">
+                                    <div class="scheme-icon">
+                                        <i class="fas fa-tachometer-alt" style="color: #8e44ad;"></i>
+                                    </div>
+                                    <h4>Memoria Limite Excedida (MLE)</h4>
+                                    <p>Tu solución usa demasiada memoria</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+
+
+                        
+                        <div class="tip-box">
+                            <p><strong>Consejo:</strong> Cuando recibes un veredicto incorrecto, no te desanimes. Analiza tu código, busca casos extremos y considera enfoques alternativos. La depuración es una habilidad esencial en PC.</p>
+                        </div>
+                    </div>
+
+
                 </div>
 
                 <!-- Pestaña de Ejemplos -->
                 <div id="ejemplos" class="tab-content video-content" >
                     <div class="content-section">
-                        <h3>Recursos de Aprendizaje</h3>
+                        <h1>Recursos de Aprendizaje</h1>
                         <p>Para mejorar en programación competitiva, te recomendamos los siguientes recursos:</p>
                         <a href=""></a>
                         <div class="video-grid">
