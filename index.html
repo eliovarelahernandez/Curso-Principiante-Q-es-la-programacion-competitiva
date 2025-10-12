@@ -4,58 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title> Qué es la PC y Evaluación de Problemas | PC++</title>
+    <title>Fundamentos de Programación Competitiva | PC++</title>
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2d7dd2;
-            --accent-color: #ff6b6b;
-            --light-color: #f8fafc;
-            --dark-color: #2d3748;
-            --text-color: #2d3748;
-            --text-light: #718096;
-            --white: #ffffff;
-            --black: #000000;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.40);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --border-radius: 12px;
-            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d7dd2 100%);
-            --gradient-secondary: linear-gradient(135deg, #2d7dd2 0%, #6cb2eb 100%);
-            
-            /* Variables para modo oscuro */
-            --bg-color: #ffffff;
-            --bg-secondary: #f8fafc;
-            --text-primary: #2d3748;
-            --text-secondary: #718096;
-            --card-bg: #ffffff;
-            --code-bg: #1a1f2e;
-            --border-color: #e2e8f0;
-        }
-
-        /* Modo oscuro */
-        .dark-mode {
-            --primary-color: #63b3ed;
-            --secondary-color: #4299e1;
-            --accent-color: #fc8181;
-            --light-color: #2d3748;
-            --dark-color: #e2e8f0;
-            --text-color: #e2e8f0;
-            --text-light: #a0aec0;
-            --white: #1a202c;
-            --black: #f7fafc;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.7);
-            --gradient-primary: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-            --gradient-secondary: linear-gradient(135deg, #4299e1 0%, #63b3ed 100%);
-            
-            --bg-color: #1a202c;
-            --bg-secondary: #2d3748;
-            --text-primary: #e2e8f0;
-            --text-secondary: #a0aec0;
-            --card-bg: #2d3748;
-            --code-bg: #0f1419;
-            --border-color: #4a5568;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #083553;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --white: #fff;
+            --black: #000;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -65,26 +27,23 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-color: var(--white);
             overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
             width: 97%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 0px;
         }
 
         .section {
             padding: 80px 0;
         }
-
-       
 
         .section-title {
             text-align: center;
@@ -92,7 +51,6 @@
             font-size: 2.5rem;
             color: var(--primary-color);
             position: relative;
-            font-weight: 700;
         }
 
         .section-title::after {
@@ -100,20 +58,17 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: var(--gradient-secondary);
+            background-color: var(--secondary-color);
             margin: 15px auto;
-            border-radius: 2px;
         }
 
         .bg-light {
-            background-color: var(--bg-secondary);
+            background-color: var(--light-color);
         }
 
         h1, h2, h3, h4, h5, h6 {
             line-height: 1.2;
             margin-bottom: 15px;
-            font-weight: 600;
-            color: var(--text-primary);
         }
 
         a {
@@ -123,78 +78,50 @@
         }
 
         a:hover {
+            background-color: white;
             color: var(--primary-color);
         }
 
         img {
             max-width: 100%;
             height: auto;
-            max-height: 500px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .img-container {
-            text-align: center;
-            margin: 30px 0;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-        }
-
-        .img-container img {
-            margin: 10px;
-        }
-
-        .img-container img:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .img-caption {
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-top: 12px;
-            font-size: 0.9rem;
         }
 
         .cta-button, .course-button, .submit-button {
             display: inline-block;
-            background: var(--gradient-secondary);
+            background-color: var(--secondary-color);
             color: var(--white);
             padding: 12px 30px;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            box-shadow: var(--shadow);
-            max-width: 125px;
         }
 
         .cta-button:hover, .course-button:hover, .submit-button:hover {
+            background-color: #083553;
             transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow);
             color: white;
         }
 
-        /* Navegación mejorada */
+        /* Navegación */
         #navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--bg-color);
-            backdrop-filter: blur(10px);
+            background-color: var(--white);
             box-shadow: var(--shadow);
             z-index: 1000;
             transition: var(--transition);
         }
 
         #navbar.scrolled {
-            background-color: var(--bg-color);
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 10px 0;
         }
 
@@ -213,15 +140,11 @@
 
         .logo span {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-primary);
+            font-weight: bold;
         }
 
         .logo span span {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--secondary-color);
         }
 
         .nav-links {
@@ -229,7 +152,6 @@
             list-style: none;
             margin-left: auto;
             margin-right: 20px;
-            align-items: center;
         }
 
         .nav-links li {
@@ -237,7 +159,7 @@
         }
 
         .nav-links a {
-            color: var(--text-primary);
+            color: var(--dark-color);
             font-weight: 600;
             position: relative;
         }
@@ -249,7 +171,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient-secondary);
+            background-color: var(--secondary-color);
             transition: var(--transition);
         }
 
@@ -257,48 +179,18 @@
             width: 100%;
         }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 5px;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .theme-toggle:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .dark-mode .theme-toggle:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
         .hamburger {
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
-            color: var(--text-primary);
+            color: var(--dark-color);
             margin-left: auto;
-            transition: var(--transition);
-            z-index: 1001;
-        }
-
-        .hamburger.active {
-            transform: rotate(90deg);
         }
 
         /* Hero Section */
         .hero {
-            height: 75vh;
-            background: var(--gradient-primary), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            height: 85vh;
+            background:  linear-gradient(135deg, #1a365d 0%, #2d7dd2 100%) , url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
             color: var(--white);
             display: flex;
             align-items: center;
@@ -308,30 +200,17 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
-            position: relative;
-            z-index: 1;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease;
-            font-weight: 700;
         }
 
         .subtitle {
@@ -352,340 +231,272 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Tabs de contenido mejorados */
-        .content-tabs {
-            margin: 40px 0;
+        /* Beneficios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
-        .tab-buttons {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid var(--border-color);
-            flex-wrap: wrap;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .tab-button {
-            padding: 15px 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            transition: var(--transition);
-            position: relative;
-            margin: 0 5px 10px;
-            border-radius: 8px;
-        }
-
-        .tab-button:hover {
-            background-color: rgba(45, 125, 210, 0.1);
-            color: var(--secondary-color);
-        }
-
-        .tab-button.active {
-            color: var(--white);
-            background: var(--gradient-secondary);
-            box-shadow: var(--shadow);
-        }
-
-        .tab-content {
-            display: none;
+        .benefit-card {
+            background-color: var(--white);
             padding: 30px;
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
+            border-radius: 10px;
+            text-align: center;
             box-shadow: var(--shadow);
-            border-top: 4px solid var(--secondary-color);
+            transition: var(--transition);
         }
 
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
+        .benefit-card:hover {
+            transform: translateY(-10px);
         }
 
-        /* Estilos para contenido */
-        .content-section {
-            margin-bottom: 40px;
-        }
-
-        .content-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
-            font-size: 1.5rem;
-        }
-
-        .content-section p {
-            margin-bottom: 15px;
-            line-height: 1.8;
-            color: var(--text-primary);
-        }
-
-        .content-section ul, .content-section ol {
-            margin-left: 30px;
-            margin-bottom: 20px;
-        }
-
-        .content-section li {
-            margin-bottom: 10px;
-            position: relative;
-            color: var(--text-primary);
-        }
-
-        .content-section ul li::before {
-            content: "•";
+        .benefit-card i {
+            font-size: 3rem;
             color: var(--secondary-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+            margin-bottom: 20px;
         }
 
-        .code-block {
-            background-color: var(--code-bg);
-            color: #e2e8f0;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            margin: 20px 0;
-            overflow-x: auto;
-            font-family: 'Fira Code', 'Courier New', monospace;
-            line-height: 1.5;
-            position: relative;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .benefit-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 15px;
-            color: #a0aec0;
-            font-size: 0.9rem;
         }
 
-        .copy-btn {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .copy-btn:hover {
-            background-color: var(--primary-color);
-        }
-
-        .copy-btn.copied {
-            background-color: #27ae60;
-        }
-
-        .info-box {
-            background-color: var(--bg-secondary);
-            border-left: 4px solid var(--secondary-color);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        .warning-box {
-            background-color: var(--bg-secondary);
-            border-left: 4px solid #f1c40f;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        .tip-box {
-            background-color: var(--bg-secondary);
-            border-left: 4px solid #27ae60;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: var(--shadow);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-
-        .comparison-table th {
-            background-color: var(--bg-secondary);
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .comparison-table tr:hover {
-            background-color: var(--bg-secondary);
-        }
-
-        .problem-list {
-            list-style-type: none;
-            margin-left: 0;
-        }
-
-        .problem-item {
-            background-color: var(--card-bg);
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: var(--border-radius);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .problem-item:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .problem-info {
-            flex-grow: 1;
-        }
-
-        .problem-links a {
-            margin-left: 10px;
-            padding: 8px 15px;
-            background: var(--gradient-secondary);
-            color: white;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .problem-links a:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .video-grid {
+        /* Cursos */
+        .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            gap: 30px;
         }
 
-        .video-item {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
+        .course-card {
+            background-color: var(--white);
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            cursor: pointer;
-            border-top: 4px solid var(--secondary-color);
         }
 
-        .video-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        .course-card:hover {
+            transform: translateY(-10px);
         }
 
-        .video-thumbnail {
-            width: 100%;
-            height: 180px;
-            background-color: var(--bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 3rem;
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .video-thumbnail::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-            z-index: 1;
-        }
-
-        .video-thumbnail i {
-            z-index: 2;
-            transition: var(--transition);
-            color: white;
-        }
-
-        .video-item:hover .video-thumbnail i {
-            transform: scale(1.2);
-            color: var(--secondary-color);
-        }
-
-        .video-info {
+        .course-content {
             padding: 20px;
         }
 
-        .video-info h4 {
-            margin-bottom: 10px;
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--primary-color);
         }
 
-        .video-info p {
-            color: var(--text-primary);
+        .course-desc {
+            margin-bottom: 20px;
+            color: var(--text-light);
         }
 
-        .difficulty {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 8px;
+        .course-content p{ 
+            color: black;
+        }
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            margin-left: -10px;
+            color: var(--black);
         }
 
-        .difficulty-easy {
-            background-color: #e8f6ef;
-            color: #27ae60;
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            margin: 5px;
         }
 
-        .difficulty-medium {
-            background-color: #fef9e7;
-            color: #f39c12;
+        .course-meta i {
+            margin-right: 5px;
         }
 
-        .difficulty-hard {
-            background-color: #fdecea;
-            color: #e74c3c;
+        .course-button {
+            display: block;
+            text-align: center;
         }
 
-        /* Footer mejorado */
+        /* Información */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-text ul {
+            margin: 20px 0 20px 20px;
+        }
+
+        .about-text li {
+            margin-bottom: 10px;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            background-color: var(--white);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            background-color: var(--light-color);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 20px 20px;
+        }
+
+        /* Contacto */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form {
+            min-width: 200px;
+            max-width: 400px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            min-width: 200px;
+            max-width: 300px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .submit-button {
+            width: 100%;
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .gmail2{ 
+            display: none;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            margin-right: 15px;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Footer */
         footer {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #1a365d 0%, #2d7dd2 100%);
             color: var(--white);
             padding: 60px 0 0;
         }
@@ -708,12 +519,14 @@
         }
 
         .footer-logo span span {
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--secondary-color);
         }
 
+        .footer-links h4, 
+        .footer-courses h4,
+        .footer-info h4  
+
+        /* Footer info */
         .footer-info ul {
             list-style: none;
             padding-left: 0;
@@ -721,7 +534,7 @@
 
         .footer-info li {
            margin-bottom: 12px;
-            color: #e2e8f0;
+            color: var(--light-color);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -747,7 +560,7 @@
 
         .footer-links a,
         .footer-courses a {
-            color: #e2e8f0;
+            color: var(--light-color);
         }
 
         .footer-links a:hover,
@@ -759,7 +572,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
             text-align: center;
-            color: #e2e8f0;
+            color: var(--light-color);
             font-size: 0.9rem;
         }
 
@@ -768,7 +581,7 @@
         }
 
         .legal-links a {
-            color: #e2e8f0;
+            color: var(--light-color);
             margin: 0 10px;
         }
 
@@ -804,32 +617,35 @@
             }
         }
 
-        /* Responsive Design mejorado */
+        /* Responsive Design */
         @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
+
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 0;
+                top: 80px;
                 left: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: var(--gradient-primary);
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 transition: var(--transition);
-                z-index: 999;
-                padding: 80px 0;
             }
             
             .nav-links.active {
@@ -837,19 +653,12 @@
             }
             
             .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .nav-links a {
-                color: var(--white);
-                font-size: 1.2rem;
+                margin: 20px 0;
             }
             
             .hamburger {
                 display: block;
                 margin-right: 20px;
-                position: relative;
-                z-index: 1001;
             }
             
             .hero h1 {
@@ -860,42 +669,19 @@
                 font-size: 2rem;
             }
 
-            .tab-buttons {
+            .course-intro p {
+                font-size: 1.1rem;
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .tab-button {
-                width: 100%;
                 text-align: center;
+            }
+            
+            .course-intro i {
                 margin-bottom: 5px;
-                border-radius: 8px;
+                margin-right: 0;
             }
 
-            .problem-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .problem-links {
-                margin-top: 10px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .problem-links a {
-                margin-left: 0;
-                margin-right: 10px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-info li {
-                justify-content: center;
+            .footer-info {
+                margin-left: 0px;
             }
         }
 
@@ -907,8 +693,7 @@
             .subtitle {
                 font-size: 1rem;
                 font-weight: 500; 
-                color: white;
-                padding: 10px 15px;
+                color: white
             }
             
             .section {
@@ -920,630 +705,160 @@
                 margin-bottom: 40px;
             }
 
-            .video-grid {
-                grid-template-columns: 1fr;
+            .contact-form{ 
+                padding: 10px;
+                max-width: 300px;
             }
-            
-            .code-block {
-                padding: 15px;
-                font-size: 0.9rem;
+
+            .contact-info{ 
+                max-width: 300px;
             }
-            
-            .tab-content {
-                padding: 15px;
-            }
-            
-            .content-section ul, .content-section ol {
-                margin-left: 20px;
-            }
-            
-            .comparison-table {
-                display: block;
-                overflow-x: auto;
-            }
-            
-            .img-container {
-                margin: 20px 0;
-            }
-        }
 
-        .salida{ 
-            background-color: #000;
-            color: white;
-        }
-
-        
-        /* Estilos para el modal del video */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .video-modal.active {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .video-modal-content {
-            position: relative;
-            width: 90%;
-            max-width: 800px;
-            background-color: var(--black);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-modal-iframe {
-            width: 100%;
-            height: 450px;
-            border: none;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 2001;
-            background: none;
-            border: none;
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--secondary-color);
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .video-modal-content {
-                width: 95%;
-            }
-            
-            .video-modal-iframe {
-                height: 300px;
-            }
-            
-            .video-thumbnail {
-                height: 160px;
-            }
-            
-            .video-thumbnail i {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .video-modal-iframe {
-                height: 250px;
-            }
-            
-            .video-thumbnail {
-                height: 140px;
-            }
-            
-            .video-thumbnail i {
-                font-size: 2rem;
-            }
-            
-            .video-content {
-                margin: 0px 20px;
-            }
-        }
-
-        
-
-        /** Visual Scheme Caracterisiticas de la programacion competitiva **/
-        .visual-scheme {
-            background-color: var(--light-color);
-            border-radius: 10px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .scheme-title {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .scheme-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            width: 100%;
-        }
-
-        .scheme-item {
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .scheme-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .scheme-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        .scheme-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-
-
-        /**  Style de imagenes de plataformas , grid 2x2 **/
-        .image-grid-section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
-
-        .image-grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .image-card {
-            background-color: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .image-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .image-wrapper {
-            position: relative;
-            overflow: hidden;
-            height: 300px; /* Altura fija */
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .image-card:hover .image-wrapper img {
-            transform: scale(1.1);
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(44, 62, 80, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .image-card:hover .image-overlay {
-            opacity: 1;
-        }
-
-        .image-overlay i {
-            font-size: 2rem;
-            color: var(--white);
-        }
-
-        .image-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .image-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-        }
-
-        .image-content p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-
-        
-
-         /* Media queries para responsividad */
-        @media (max-width: 768px) {
-            .image-grid-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .image-wrapper {
-                height: 250px; /* Reducir altura en móviles */
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .image-grid-section {
-                padding: 20px 15px;
-            }
-            
-            .image-wrapper {
-                height: 200px; /* Altura aún menor en móviles pequeños */
-            }
-            
-            .image-content {
-                padding: 20px;
-            }
-        }
-
-        /** Diagrama de flechas pasos para resolucion de ejercicios  **/
-        .flow-diagram {
-            background-color: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: var(--shadow);
-            border: 2px solid var(--light-color);
-        }
-
-        .flow-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .flow-step {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: var(--white);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .flow-step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
-        }
-
-        .flow-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--white);
-        }
-
-        .flow-step h4 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .flow-arrow {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .flow-container {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .flow-step {
-                flex: 1;
-                min-width: 200px;
-                max-width: 220px;
-            }
-            
-            .flow-arrow {
-                transform: rotate(0deg);
-            }
-            
-            .flow-arrow:nth-child(even) {
-                transform: rotate(90deg);
-            }
-        }
-        
-        /** Infografia **/
-        .infographic {
-            background: var(--secondary-color);
-            color: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin: 30px 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .infographic::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transform: translate(50px, -50px);
-        }
-
-        .infographic-title {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .infographic-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .infographic-step {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-            flex: 1;
-            min-width: 200px;
-            max-width: 250px;
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--secondary-color);
-            color: var(--white);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        /**  Comparacion Visual **/
-
-        .comparison-section {
-            padding: 60px 0;
-        }
-
-        .comparison-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: stretch;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .approach-card {
-            flex: 1;
-            min-width: 300px;
-            max-width: 400px;
-            background-color: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 2px solid var(--light-color);
-        }
-
-        .approach-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .approach-card.optimized {
-            border-color: var(--secondary-color);
-            position: relative;
-        }
-
-        .approach-card.optimized::before {
-            content: 'RECOMENDADO';
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            z-index: 2;
-        }
-
-        .approach-header {
-            background: linear-gradient(135deg, var(--light-color), #dde4e6);
-            padding: 30px;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .approach-card.optimized .approach-header {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: var(--white);
-        }
-
-        .approach-header i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .approach-header h4 {
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        .approach-content {
-            padding: 30px;
-        }
-
-        .approach-features {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .approach-features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .approach-features i {
-            margin-right: 12px;
-            width: 20px;
-            text-align: center;
-        }
-
-        .approach-features .fa-check {
-            color: #27ae60;
-        }
-
-        .approach-features .fa-times {
-            color: #e74c3c;
-        }
-
-        .approach-use-case {
-            background-color: var(--light-color);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .approach-use-case h5 {
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .vs-separator {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .vs-separator span {
-            background-color: var(--primary-color);
-            color: var(--white);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .vs-separator{ 
+            .gmail1{ 
                 display: none;
             }
 
-            .comparison-container {
-                flex-direction: column;
-                align-items: center;
+            .gmail2{ 
+                display: block;
             }
             
-            .approach-card {
-                width: 100%;
-                max-width: 100%;
-            }
-            
-            .vs-separator {
-                order: -1;
-                margin-bottom: 20px;
-            }
         }
 
-        .title{ 
+        /* Estilos para las frases introductorias de cursos */
+        .course-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .course-intro p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .course-intro i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* Estilos específicos para la página de curso */
+        .enunciado {
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .enunciado-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: var(--light-color);
+        }
+
+        .enunciado-header i {
+            transition: var(--transition);
+        }
+
+        .enunciado-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .subtemas {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .subtemas.active {
+            max-height: 1000px;
+        }
+
+        .subtema-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .subtema-item a{
+            font-size: 18px;
+            color: var(--accent-color);
+        }
+
+        .subtema-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .subtema-item a:hover{
+            color: #3498db;
+         
+        }
+
+        .subtema-item:last-child {
+            border-bottom: none;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .tab-button.active {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+
+        .problem-link {
+            display: inline-block;
+            background-color: var(--secondary-color);
             color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 10px 5px;
+            transition: var(--transition);
         }
 
+        .problem-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -1554,14 +869,11 @@
                 <span>PC<span>++</span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#content">Contenido</a></li>
-                <li><a href="index.html#info">Problemas</a></li>
-                <li>
-                    <button class="theme-toggle" id="themeToggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#content">Contenido</a></li>
+                <li><a href="#info">Información</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="https://pc-ia-firulay.netlify.app/">Firulay</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -1569,633 +881,206 @@
         </div>
     </nav>
 
-    <!-- Sección Hero -->
-    <section class="hero">
+    <!-- Sección Home -->
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="title" >¿Qué es la Programación Competitiva?</h1>
-            <p class="subtitle">Aprende qué es la Programacion Competitiva y cómo se evalúan los problemas</p>
+            <h1>Fundamentos de Programación Competitiva</h1>
+            <p class="subtitle">Domina las bases de C++, algoritmos y estructuras de datos para resolver problemas de programación</p>
+            <a href="#content" class="cta-button">Ver Contenido</a>
         </div>
     </section>
 
-    <!-- Sección de Contenido -->
-    <section class="section">
+    <!-- Sección Contenido -->
+    <section id="content" class="section">
         <div class="container">
-            <div class="content-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-button active" data-tab="introduccion">Introducción</button>
-                    <button class="tab-button" data-tab="evaluacion">Problemas y Soluciones</button>
-                    <button class="tab-button" data-tab="videos">Videos</button>
+            <h2 class="section-title">Contenido del Curso</h2>
+            <div class="course-intro">
+                <p><i class="fas fa-bullseye"></i> Objetivo: Dominar las bases de la programación, estructuras de datos simples y resolución de problemas clásicos</p>
+            </div>
+            
+            <!-- Enunciados -->
+            <div class="enunciados-container">
+                <div class="enunciado">
+                    <div class="enunciado-header">
+                        <h3>Introducción a la Programación Competitiva</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="subtemas">
+                        <div class="subtema-item" data-subtema="1.1"> <a href="https://pc-course1-qeslapc.netlify.app"> Qué es la PC y cómo se evalúan los problemas</a></div>
+                        <div class="subtema-item" data-subtema="1.2" style=" display:none" >Uso de plataformas online (Codeforces, AtCoder, CSES)</div>
+                        <div class="subtema-item" data-subtema="1.3" style=" display:none" >Buenas prácticas de programación</div>
+                    </div>
                 </div>
-    
-
-
-
-                <!-- Pestaña de Introducción -->
-                <div id="introduccion" class="tab-content active">
-                    <div class="content-section">
-                        <h1>¿Qué es la Programación Competitiva?</h1>
-                        <p>La Programación Competitiva (PC) es un deporte mental que consiste en resolver problemas de programación bajo restricciones de tiempo. Los participantes compiten individualmente o en equipos para resolver la mayor cantidad de problemas en el menor tiempo posible.</p>
-                        
-                        <div class="img-container">
-                            <img src="./Images/1712764744219.png">
-                        </div>
-
-                        <div class="visual-scheme">
-                            <h3 class="scheme-title">Características de la Programación Competitiva</h3>
-                            <div class="scheme-container">
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <h4>Pensamiento Algorítmico</h4>
-                                    <p>Desarrolla habilidades para diseñar soluciones eficientes a problemas complejos</p>
-                                </div>
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <h4>Trabajo Bajo Presión</h4>
-                                    <p>Aprende a resolver problemas en tiempo limitado, simulando entornos reales</p>
-                                </div>
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h4>Código Eficiente</h4>
-                                    <p>Escribe soluciones optimizadas que funcionen incluso con grandes volúmenes de datos</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        
-                    </div>
-
-                    <div class="content-section">
-                        
-                        <div class="tip-box">
-                            <p><strong>Consejo:</strong> Comienza con problemas sencillos y gradualmente aumenta la dificultad. La consistencia es más importante que la intensidad cuando se está comenzando.</p>
-                        </div>
-                    </div>
-
-
-                    
-
-                    <div class="content-section">
-                        <div class="image-grid-section">
-                            <h3 class="section-title">Plataformas de Práctica</h3>
-                            <div class="image-grid-container">
-                                <div class="image-card">
-                                    <div class="image-wrapper">
-                                        <img src="./Images/Codeforces.PNG" alt="Codeforces">
-                                        <div class="image-overlay">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="image-content">
-                                        <h4>Codeforces</h4>
-                                        <p>Plataforma rusa con competencias regulares y sistema de rating muy popular.</p>
-                                        <a href="https://codeforces.com/" class="course-button">Visitar</a>
-                                    </div>
-                                </div>
-                                
-                                <div class="image-card">
-                                    <div class="image-wrapper">
-                                        <img src="./Images/leetcode.PNG" alt="LeetCode">
-                                        <div class="image-overlay">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="image-content">
-                                        <h4>LeetCode</h4>
-                                        <p>Ideal para preparación de entrevistas técnicas en empresas tecnológicas.</p>
-                                        <a href="https://leetcode.com/" class="course-button">Visitar</a>
-                                    </div>
-                                </div>
-                                
-                                <div class="image-card">
-                                    <div class="image-wrapper">
-                                        <img src="./Images/DMOJ.PNG" alt="AtCoder">
-                                        <div class="image-overlay">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="image-content">
-                                        <h4>DMOJ</h4>
-                                        <p>Plataforma cubana donde se realizan concursos provinciales y nacionales.</p>
-                                        <a href="https://dmoj.uclv.edu.cu/" class="course-button">Visitar</a>
-                                    </div>
-                                </div>
-                                
-                                <div class="image-card">
-                                    <div class="image-wrapper">
-                                        <img src="./Images/USACO.PNG" alt="CSES">
-                                        <div class="image-overlay">
-                                            <i class="fas fa-external-link-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="image-content">
-                                        <h4>USACO</h4>
-                                        <p>Colección de problemas educativos organizados por temas y dificultad.</p>
-                                        <a href="https://usaco.org/" class="course-button">Visitar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                    </div>
-
-                    <div class="content-section">
-                        <h1>IDEs y Editores de Texto para Programación Competitiva</h1>
-                        <p>La elección del entorno de desarrollo es crucial en programación competitiva. Los participantes suelen utilizar editores de texto ligeros o IDEs completos según sus preferencias personales. Aquí te presentamos algunas de las opciones más populares:</p>
-                        
-                        <div class="comparison-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Herramienta</th>
-                                        <th>Tipo</th>
-                                        <th>Ventajas</th>
-                                        <th>Desventajas</th>
-                                        <th>Enlaces de Descarga</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Visual Studio Code</td>
-                                        <td>Editor de texto</td>
-                                        <td>Liviano, extensible, multiplataforma</td>
-                                        <td>Requiere configuración para debugging</td>
-                                        <td><a href="https://code.visualstudio.com/download">Descargar vscode</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Code::Blocks</td>
-                                        <td>IDE completo</td>
-                                        <td>Especializado para C/C++, fácil de usar</td>
-                                        <td>Interfaz menos moderna</td>
-                                        <td><a href="https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows">descargar codeblocks</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dev-C++</td>
-                                        <td>IDE completo</td>
-                                        <td>Liviano, portable, buen para principiantes</td>
-                                        <td>Poco mantenimiento, solo Windows</td>
-                                        <td><a href="https://www-bloodshed-net.translate.goog/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc">Descargar DevC++</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>GCC</td>
-                                        <td>conjunto de compiladores</td>
-                                        <td>Software libre q necesitamos obligatoriamente</td>
-                                        <td>Bajo la licencia GPL</td>
-                                        <td><a href="https://www.youtube.com/watch?v=7EhviIt5ems&t=96s">Instalar GCC</a></td>
-                                    </tr>
-                                    
-                                    
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <h4>Visual Studio Code</h4>
-                        <p>Visual Studio Code es uno de los editores más populares en la actualidad gracias a su ligereza, amplia gama de extensiones y soporte para múltiples lenguajes de programación.</p>
-                        
-                        <div class="img-container">
-                            <img src="./Images/vscode.PNG" alt="Visual Studio Code">
-                            <div class="img-caption">Visual Studio Code con tema oscuro y extensiones para C++</div>
-                        </div>
-                        
-                        <p>Extensiones recomendadas para programación competitiva en VSCode:</p>
-                        <ul>
-                            <li>C/C++ (Microsoft)</li>
-                            <li>Competitive Programming Helper</li>
-                            <li>Code Runner</li>
-                            <li>Bracket Pair Colorizer</li>
-                        </ul>
-                        
-                        <h4>Code::Blocks</h4>
-                        <p>Code::Blocks es un IDE gratuito y de código abierto especialmente diseñado para C, C++ y Fortran. Es muy popular en competencias universitarias y escolares.</p>
-                        
-                        <div class="img-container">
-                            <img src="./Images/codeblocks.png" alt="Code::Blocks IDE">
-                            <div class="img-caption">Entorno de desarrollo Code::Blocks</div>
-                        </div>
-                        
-                        <p>Características principales:</p>
-                        <ul>
-                            <li>Soporte para múltiples compiladores (GCC, Clang, Visual C++)</li>
-                            <li>Debugger integrado con GDB</li>
-                            <li>Interfaz personalizable con pestañas</li>
-                            <li>Plantillas de proyectos para rápido inicio</li>
-                        </ul>
-                        
-                        <h4>Dev-C++</h4>
-                        <p>Aunque menos actualizado, Dev-C++ sigue siendo una opción popular especialmente en entornos educativos por su simplicidad y facilidad de uso.</p>
-                        
-                        <div class="img-container">
-                            <img src="./Images/devc++.webp" alt="Dev-C++ IDE">
-                            <div class="img-caption">Interfaz de Dev-C++ mostrando código C++</div>
-                        </div>
-                        
-                        <div class="info-box">
-                            <p><strong>Consejo Importante:</strong>  <strong style="color: blue" >Recomiendo personalmente usar codeblocks</strong>  debido a sus ventajas en autocompletado, rapidez de compilación , facilidad en su intalacion y reconocimiento automático de librerías.</p>
-                        </div>
-                        
-
-                        <h4>Configuración básica para competiciones</h4>
-                        <p>Independientemente del editor que uses, es importante tener configurados:</p>
-                        <ol>
-                            <li>Compilador C++ actualizado (GCC recomendado) <a href="https://www.youtube.com/watch?v=7EhviIt5ems&t=96s">Ver video para instalarlo </a> </li>
-                            <li>Plantillas de código para algoritmos comunes</li>
-                            <li>Atajos de teclado para compilar y ejecutar rápidamente</li>
-                            <li>Soporte para debugging con puntos de interrupción</li>
-                        </ol>
-                        
-                        <div class="tip-box">
-                            <p><strong>Tip avanzado:</strong> Muchos competidores experimentados crean scripts personalizados para compilar, ejecutar y testear sus soluciones contra casos de prueba automáticamente.</p>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <!-- Pestaña de Evaluación -->
-                <div id="evaluacion" class="tab-content">
-                    <div class="content-section">
-                        <h1>Tipos de Problemas</h1>
-                        <p>Los problemas en programación competitiva pueden clasificarse en varias categorías:</p>
-                        
-                        <div class="comparison-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Tipo</th>
-                                        <th>Descripción</th>
-                                        <th>Ejemplos</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>fuerza bruta</td>
-                                        <td>Prueban todas las soluciones posibles, sin optimización</td>
-                                        <td>Permutaciones, combinaciones, búsqueda exhaustiva</td>
-                                    </tr>
-                                    <tr>
-                                        <td>implementación</td>
-                                        <td>Requieren codificar cuidadosamente una solución directa</td>
-                                        <td>Simulaciones, procesamiento de cadenas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>recursividad</td>
-                                        <td>Se resuelven llamando a la misma función con casos más pequeños</td>
-                                        <td>Torres de Hanoi, recorrido de árboles</td>
-                                    </tr>
-                                    <tr>
-                                        <matemáticos</td>
-                                        <td>Involucran conceptos y fórmulas matemáticas</td>
-                                        <td>Teoría de números, combinatoria, probabilidad</td>
-                                    </tr>
-                                    <tr>
-                                        <td>geometría</td>
-                                        <td>Involucran cálculos y propiedades geométricas</td>
-                                        <td>Puntos, líneas, polígonos, intersecciones</td>
-                                    </tr>
-                                    <tr>
-                                        <voraces (Greedy)</td>
-                                        <td>Requieren tomar decisiones localmente óptimas</td>
-                                        <td>Problemas de scheduling, algoritmos voraces</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Búsqueda</td>
-                                        <td>Buscan elementos o caminos dentro de estructuras de datos</td>
-                                        <td>Búsqueda binaria, backtracking</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cadenas</td>
-                                        <td>Trabajan con manipulación y análisis de cadenas</td>
-                                        <td>Substrings, palíndromos, Hashing</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Estructuras de datos</td>
-                                        <td>Requieren uso eficiente de estructuras específicas</td>
-                                        <td>Segment Tree, spaced tables, Binary Indexed Tree</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Grafos</td>
-                                        <td>Se modelan como grafos y requieren algoritmos específicos</td>
-                                        <td>BFS, DFS, Dijkstra, árboles</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Programación dinámica</td>
-                                        <td>Requieren dividir el problema en subproblemas más pequeños</td>
-                                        <td>Knapsack, LCS, problemas de optimización</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Teoría de juegos</td>
-                                        <td>Involucran estrategias y decisiones entre jugadores</td>
-                                        <td>Juegos combinatorios, minimax</td>
-                                    </tr>
-                                    
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-
-
-                        <div class="comparison-section">
-                            <h3 class="section-title">Enfoques de Solución</h3>
-                            <div class="comparison-container">
-                                <div class="approach-card">
-                                    <div class="approach-header">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                        <h4>Fuerza Bruta</h4>
-                                    </div>
-                                    <div class="approach-content">
-                                        <ul class="approach-features">
-                                            <li><i class="fas fa-check"></i> Fácil de implementar</li>
-                                            <li><i class="fas fa-check"></i> No requiere análisis complejo</li>
-                                            <li><i class="fas fa-times"></i> Ineficiente para entradas grandes</li>
-                                            <li><i class="fas fa-times"></i> Puede exceder tiempo límite</li>
-                                        </ul>
-                                        <div class="approach-use-case">
-                                            <h5>Cuándo usar:</h5>
-                                            <p>Problemas pequeños con n ≤ 20</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="vs-separator">
-                                    <span>VS</span>
-                                </div>
-                                
-                                <div class="approach-card optimized">
-                                    <div class="approach-header">
-                                        <i class="fas fa-rocket"></i>
-                                        <h4>Algoritmo Optimizado</h4>
-                                    </div>
-                                    <div class="approach-content">
-                                        <ul class="approach-features">
-                                            <li><i class="fas fa-check"></i> Eficiente y escalable</li>
-                                            <li><i class="fas fa-check"></i> Maneja entradas grandes</li>
-                                            <li><i class="fas fa-times"></i> Requiere análisis profundo</li>
-                                            <li><i class="fas fa-times"></i> Más difícil de implementar</li>
-                                        </ul>
-                                        <div class="approach-use-case">
-                                            <h5>Cuándo usar:</h5>
-                                            <p>Problemas con n ≥ 10^5</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flow-diagram">
-                            <h2 class="diagram-title">Proceso de Resolución de Problemas</h2>
-                            <div class="flow-container">
-                                <div class="flow-step">
-                                    <div class="flow-icon">
-                                        <i class="fas fa-book-open"></i>
-                                    </div>
-                                    <h4>Leer Problema</h4>
-                                    <p>Comprender el enunciado y restricciones</p>
-                                </div>
-                                <div class="flow-arrow">
-                                    <i class="fas fa-arrow-down"></i>
-                                </div>
-                                <div class="flow-step">
-                                    <div class="flow-icon">
-                                        <i class="fas fa-lightbulb"></i>
-                                    </div>
-                                    <h4>Diseñar Solución</h4>
-                                    <p>Planear el algoritmo y estructuras de datos</p>
-                                </div>
-                                <div class="flow-arrow">
-                                    <i class="fas fa-arrow-down"></i>
-                                </div>
-                                <div class="flow-step">
-                                    <div class="flow-icon">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h4>Implementar</h4>
-                                    <p>Escribir el código de la solución</p>
-                                </div>
-                                <div class="flow-arrow">
-                                    <i class="fas fa-arrow-down"></i>
-                                </div>
-                                <div class="flow-step">
-                                    <div class="flow-icon">
-                                        <i class="fas fa-vial"></i>
-                                    </div>
-                                    <h4>Probar</h4>
-                                    <p>Verificar con casos de prueba</p>
-                                </div>
-                                <div class="flow-arrow">
-                                    <i class="fas fa-arrow-down"></i>
-                                </div>
-                                <div class="flow-step">
-                                    <div class="flow-icon">
-                                        <i class="fas fa-paper-plane"></i>
-                                    </div>
-                                    <h4>Enviar</h4>
-                                    <p>Subir solución a la plataforma</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="content-section">
-                        <h1>¿Cómo se Evalúan los Problemas?</h1>
-                        <p>En programación competitiva, los problemas se evalúan mediante pruebas automatizadas. Tu solución se ejecuta contra un conjunto de casos de prueba predefinidos y debe producir la salida correcta para todos ellos.</p>
-
-
-                        <div class="infographic">
-                            <h3 class="infographic-title title">Proceso de Evaluación</h3>
-                            <div class="infographic-steps">
-                                <div class="infographic-step">
-                                    <div class="step-number">1</div>
-                                    <h4>Envío de Solución</h4>
-                                    <p>Envías tu código a la plataforma para ser evaluado</p>
-                                </div>
-                                <div class="infographic-step">
-                                    <div class="step-number">2</div>
-                                    <h4>Compilación</h4>
-                                    <p>El sistema compila tu código para verificar errores de sintaxis</p>
-                                </div>
-                                <div class="infographic-step">
-                                    <div class="step-number">3</div>
-                                    <h4>Ejecución de Pruebas</h4>
-                                    <p>Tu programa se ejecuta con casos de prueba ocultos</p>
-                                </div>
-                                <div class="infographic-step">
-                                    <div class="step-number">4</div>
-                                    <h4>Verificación de Resultados</h4>
-                                    <p>Se comparan tus resultados con las respuestas esperadas</p>
-                                </div>
-                                <div class="infographic-step">
-                                    <div class="step-number">5</div>
-                                    <h4>Veredicto Final</h4>
-                                    <p>Recibes el resultado: Aceptado, Error, Tiempo Límite, etc.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="warning-box">
-                            <p><strong>Importante:</strong> Los casos de prueba suelen estar ocultos y son diseñados para probar diferentes aspectos de tu solución, incluidos casos extremos y esquina.</p>
-                        </div>
-                    </div>
-
-                    <div class="content-section">
-                        <h1>Veredictos Comunes</h1>
-                        <p>Al enviar una solución, puedes recibir uno de los siguientes veredictos:</p>
-                        
-                         <div class="visual-scheme">
-                            <h3 class="scheme-title">Veredictos Comunes</h3>
-                            <div class="scheme-container">
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-check-circle" style="color: #27ae60;"></i>
-                                    </div>
-                                    <h4>Aceptado (AC)</h4>
-                                    <p>Tu solución pasó todas las pruebas. ¡Felicidades!</p>
-                                </div>
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-times-circle" style="color: #e74c3c;"></i>
-                                    </div>
-                                    <h4>Respuesta Incorrecta (WA)</h4>
-                                    <p>Tu solución produce salidas incorrectas en algunas pruebas</p>
-                                </div>
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-clock" style="color: #f39c12;"></i>
-                                    </div>
-                                    <h4>Tiempo Límite Excedido (TLE)</h4>
-                                    <p>Tu solución es demasiado lenta para algunos casos de prueba</p>
-                                </div>
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-exclamation-triangle" style="color: #f1c40f;"></i>
-                                    </div>
-                                    <h4>Error en Tiempo de Ejecución (RTE)</h4>
-                                    <p>Tu programa se bloquea o genera errores durante la ejecución</p>
-                                </div>
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-exclamation-circle" style="color: #e67e22;"></i>
-                                    </div>
-                                    <h4>Error de Compilacion (CE)</h4>
-                                    <p>Tu código no compila</p>
-                                </div>
-                                <div class="scheme-item">
-                                    <div class="scheme-icon">
-                                        <i class="fas fa-tachometer-alt" style="color: #8e44ad;"></i>
-                                    </div>
-                                    <h4>Memoria Limite Excedida (MLE)</h4>
-                                    <p>Tu solución usa demasiada memoria</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="tip-box">
-                            <p><strong>Consejo:</strong> Cuando recibes un veredicto incorrecto, no te desanimes. Analiza tu código, busca casos extremos y considera enfoques alternativos. La depuración es una habilidad esencial en PC.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-
                 
-
-                
-            <!-- Pestaña de Videos -->
-               <div id="videos" class="tab-content" >
-                    <div class="content-section">
-                        <h1>Recursos de Aprendizaje</h1>
-                        <p>Para investigar sobre programación competitiva, te recomendamos los siguientes recursos:</p>
+                <div class="enunciado">
+                    <div class="enunciado-header">
+                        <h3>Bases de Programación</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="subtemas">
+                        <div class="subtema-item" data-subtema="2.0"> <a href="https://pc-course1-tiposdedatos.netlify.app">Tipo de datos,variables y operadores</a> </div>
                         
-                        <div class="video-grid" >
-                            
-                            <div class="video-item" data-video-id="mV4L8as452k">
-                                <div class="video-thumbnail">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Cómo Empezar en Programación Competitiva</h4>
-                                    <p>Explica paso a paso cómo abordar problemas, estrategias clave y ejercicios prácticos en tiempo real.</p>
-                                </div>
-                            </div>
-
-                            <div class="video-item" data-video-id="UAGFgZaFmAE">
-                                <div class="video-thumbnail">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                                <div class="video-info">
-                                    <h4>La PROGRAMACIÓN COMPETITIVA</h4>
-                                    <p>Una guía básica con explicación de competencia, problemas y consejos para entrenar y participar.</p>
-                                </div>
-                            </div>
-
-                            <div class="video-item" data-video-id="wHRAfQMvPGk">
-                                <div class="video-thumbnail">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Cómo empezar con la Programación Competitiva - ICPC</h4>
-                                    <p>Introducción, ejemplo de problema, código de solución, envío y recomendaciones para principiantes.</p>
-                                </div>
-                            </div>
-
-                            <div class="video-item" data-video-id="PATBixl-VOQ">
-                                <div class="video-thumbnail">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Descubrí el mundo de la programación competitiva</h4>
-                                    <p>Explican qué es la programación competitiva, modos de competencia y motivación para participar.</p>
-                                </div>
-                            </div>
-
-                            <div class="video-item" data-video-id="R7fVPM3WRUM">
-                                <div class="video-thumbnail">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                                <div class="video-info">
-                                    <h4>La programación competitiva</h4>
-                                    <p>Explica qué es la programación competitiva, jueces en línea y plataformas para practicar.</p>
-                                </div>
-                            </div>
-                        
-
-                        </div>
+                        <div class="subtema-item" data-subtema="2.1"> <a href="https://pc-cursoprincipante-es.netlify.app/">Entrada/Salida</a> </div>
+                        <div class="subtema-item" data-subtema="2.2"> <a href="https://pc-cours1-condicionalesybucles.netlify.app/"> Condicionales</a></div>
+                        <div class="subtema-item" data-subtema="2.2"> <a href="https://pc-course1-bucles.netlify.app/"> Bucles ( For , While , do-While )</a></div>
+                        <div class="subtema-item" data-subtema="2.3"> <a href="https://pc-course1-funcionesyrecursividad.netlify.app"> Funciones y recursión básica</a></div>
                     </div>
                 </div>
-
                 
-
-
-                
-                <!-- Modal para reproducir videos -->
-                <div class="video-modal" id="videoModal">
-                    <div class="video-modal-content">
-                        <button class="close-modal" id="closeModal">
-                            <i class="fas fa-times"></i>
-                        </button>
-                        <iframe class="video-modal-iframe" id="videoIframe" 
-                                src="" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
+                <div class="enunciado">
+                    <div class="enunciado-header">
+                        <h3>Complejidad Algorítmica</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="subtemas">
+                        <div class="subtema-item" data-subtema="3.1"><a href="#">Notación Big-O, análisis de tiempo y memoria</a> </div>
+                        <div class="subtema-item" data-subtema="3.2"><a href="#">Casos de prueba grandes vs. pequeños</a></div>
                     </div>
                 </div>
-
+                
+                <div class="enunciado">
+                    <div class="enunciado-header">
+                        <h3>Estructuras de Datos Básicas</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="subtemas">
+                        <div class="subtema-item" data-subtema="4.1"> <a href="#"> Arrays y strings</a></div>
+                        <div class="subtema-item" data-subtema="4.2"><a href="#"> Vectores , Pilas, colas</a></div>
+                        <div class="subtema-item" data-subtema="4.3"> <a href="#">Mapa , Set</a></div>
+                    </div>
+                </div>
+                
+                <div class="enunciado">
+                    <div class="enunciado-header">
+                        <h3>Problemas Clásicos</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="subtemas">
+                        <div class="subtema-item" data-subtema="5.1"><a href="#"> Búsqueda lineal y binaria</a></div>
+                        <div class="subtema-item" data-subtema="5.2"><a href="#">Ordenamiento (inserción, burbuja, mergesort)</a> </div>
+                        <div class="subtema-item" data-subtema="5.3"><a href="#">Problemas de simulación e implementación</a> </div>
+                    </div>
+                </div>
+                
+                <div class="enunciado">
+                    <div class="enunciado-header">
+                        <h3>Matemáticas Iniciales</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="subtemas">
+                        <div class="subtema-item" data-subtema="6.1"><a href="#"> Aritmética modular</a></div>
+                        <div class="subtema-item" data-subtema="6.2"><a href="#"> Máximo Común Divisor (MCD) y Mínimo Común Múltiplo (MCM)</a></div>
+                        <div class="subtema-item" data-subtema="6.3"><a href="#">Números primos y criba de Eratóstenes</a> </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Sección Información -->
+    <section id="info" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Información del Curso</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    
+                     <h3>Objetivos del curso</h3>
+                    <ul>
+                        <li>Dominar los fundamentos de C++ para competición</li>
+                        <li>Resolver problemas de nivel principiante en plataformas online</li>
+                        <li>Entender y aplicar estructuras de datos básicas</li>
+                        <li>Analizar la complejidad de algoritmos</li>
+                        <li>Desarrollar habilidades de pensamiento algorítmico</li>
+                    </ul>
+
+
+                    <h3>Requisitos previos</h3>
+                    <p>No se requiere experiencia previa en programación competitiva, pero es recomendable:</p>
+                    <ul>
+                        <li>Conocimientos básicos de programación (cualquier lenguaje)</li>
+                        <li>Comprensión de matemáticas de nivel medio</li>
+                        <li>Deseo de aprender y resolver problemas desafiantes</li>
+                    </ul>
+                    
+                   
+                    
+                 
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1950&q=80" alt="Programación Competitiva">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- Sección Contacto -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Apellidos</label>
+                            <input type="text" id="lastname" name="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span class="gmail1" >eliovarelahernandez7@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+53 56880708</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>San Agustin 88 , Munipal Palmira , Ciudad Cienfuegos</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Lunes a Viernes: 9:00 - 18:00</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
     <!-- Footer -->
+    
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -2203,11 +1088,11 @@
                     <div class="footer-logo">
                         <span>PC<span>++</span></span>
                     </div>
-                    <p class="title" >Plataforma educativa dedicada a la enseñanza de programación competitiva y algoritmos.</p>
+                    <p>Plataforma educativa dedicada a la enseñanza de programación competitiva y algoritmos.</p>
                 </div>
                 
                 <div class="footer-info">
-                    <h4 class="title">Contacto</h4>
+                    <h4>Contacto</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Calle San Agustin Final 88 </li>
                         <li><i class="fas fa-phone"></i> +53 56880708</li>
@@ -2216,7 +1101,7 @@
                 </div>
                 
                 <div class="footer-links">
-                    <h4 class="title" >Enlaces Rápidos</h4>
+                    <h4>Enlaces Rápidos</h4>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="index.html#content">Contenido</a></li>
@@ -2224,8 +1109,8 @@
                     </ul>
                 </div>
                 
-                <div class="footer-courses ">
-                    <h4 class="title">Cursos Populares</h4>
+                <div class="footer-courses">
+                    <h4>Cursos Populares</h4>
                     <ul>
                         <li><a href="#">Introducción a la PC</a></li>
                         <li><a href="#">Algoritmos Básicos</a></li>
@@ -2235,7 +1120,7 @@
                 </div>
             </div>
             
-            <div class="footer-bottom"  >
+            <div class="footer-bottom">
                 <p>&copy; 2025 PC++. Todos los derechos reservados.</p>
                 <div class="legal-links">
                     <a href="#">Política de Privacidad</a>
@@ -2247,160 +1132,117 @@
     </footer>
 
 
-
     <script>
-        // Navegación responsive
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-        
-        // Cambiar navbar al hacer scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Sistema de pestañas
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const tabId = button.getAttribute('data-tab');
-                
-                // Desactivar todas las pestañas
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                
-                // Activar la pestaña seleccionada
-                button.classList.add('active');
-                document.getElementById(tabId).classList.add('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navegación responsive
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
             });
-        });
-        
-        // Funcionalidad de copiar código
-        const copyButtons = document.querySelectorAll('.copy-btn');
-        
-        copyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const codeBlock = button.parentElement.nextElementSibling;
-                const textToCopy = codeBlock.textContent;
-                
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    const originalText = button.innerHTML;
-                    button.innerHTML = '<i class="fas fa-check"></i> Copiado';
-                    button.classList.add('copied');
-                    
-                    setTimeout(() => {
-                        button.innerHTML = originalText;
-                        button.classList.remove('copied');
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Error al copiar: ', err);
+            
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
                 });
             });
-        });
-
-        const videoItems = document.querySelectorAll('.video-item');
-        const videoModal = document.getElementById('videoModal');
-        const videoIframe = document.getElementById('videoIframe');
-        const closeModal = document.getElementById('closeModal');
-        // Funcionalidad para el modo oscuro
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-
-        // Verificar preferencia guardada
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-
-        // Alternar modo oscuro
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
             
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        });
-
-
-        // Cargar miniaturas de YouTube para cada video
-        videoItems.forEach(item => {
-            const videoId = item.getAttribute('data-video-id');
-            const thumbnail = item.querySelector('.video-thumbnail');
-            
-            // Validar que el videoId no esté vacío y sea válido
-            if (videoId && videoId.length === 11) {
-                // Intentar cargar la miniatura en máxima resolución
-                const img = new Image();
-                img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-                
-                img.onload = function() {
-                    thumbnail.style.backgroundImage = `url(https://img.youtube.com/vi/${videoId}/maxresdefault.jpg)`;
-                };
-                
-                img.onerror = function() {
-                    // Si falla la máxima resolución, cargar alta calidad
-                    thumbnail.style.backgroundImage = `url(https://img.youtube.com/vi/${videoId}/hqdefault.jpg)`;
-                };
-            }
-
-            // Agregar evento click para reproducir video
-            item.addEventListener('click', function() {
-                const videoId = this.getAttribute('data-video-id');
-                
-                // Validar el ID del video
-                if (!videoId || videoId.length !== 11) {
-                    console.error('ID de video inválido:', videoId);
-                    return;
+            // Cambiar navbar al hacer scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
-                
-                // URL CORREGIDA - Eliminé enablejsapi que puede causar problemas
-                const videoUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-                
-                videoIframe.src = videoUrl;
-                videoModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
             });
-        });
-
-        // Cerrar modal
-        closeModal.addEventListener('click', function() {
-            videoModal.classList.remove('active');
-            videoIframe.src = '';
-            document.body.style.overflow = 'auto';
-        });
-
-        videoModal.addEventListener('click', function(e) {
-            if (e.target === videoModal) {
-                videoModal.classList.remove('active');
-                videoIframe.src = '';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-                videoModal.classList.remove('active');
-                videoIframe.src = '';
-                document.body.style.overflow = 'auto';
-            }
+            
+            // Acordeón para enunciados
+            const enunciadoHeaders = document.querySelectorAll('.enunciado-header');
+            enunciadoHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const subtemas = header.nextElementSibling;
+                    header.classList.toggle('active');
+                    subtemas.classList.toggle('active');
+                });
+            });
+            
+            // Smooth scrolling para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Animación al hacer scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.benefit-card, .course-card, .about-content, .contact-content');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Inicializar elementos con opacidad 0 para la animación
+            document.querySelectorAll('.benefit-card, .course-card, .about-content, .contact-content').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Ejecutar una vez al cargar la página
+            
+            // Formulario de contacto - Enviar a WhatsApp
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const lastname = document.getElementById('lastname').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                
+                // Crear mensaje para WhatsApp
+                const whatsappMessage = `*Mensaje sobre curso Fundamentos de PC:*%0A%0A*Nombre:* ${name} ${lastname}%0A*Teléfono:* ${phone}%0A%0A*Mensaje:*%0A${message}`;
+                
+                // Número de teléfono cubano
+                const phoneNumber = '5356880708'; // +53 56880708
+                
+                // Abrir WhatsApp con el mensaje
+                window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+                
+                // Resetear formulario
+                contactForm.reset();
+                
+                // Mostrar mensaje de éxito
+                alert('¡Gracias por tu mensaje! Serás redirigido a WhatsApp para completar el contacto.');
+            });
         });
     </script>
 </body>
+
 </html>
 
 
